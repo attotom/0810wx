@@ -11,7 +11,7 @@ module.exports =  {
         {
           "type":"view",
           "name":"跳转链接☀",
-          "url":"http://www.atguigu.com/"
+          "url":"http://www.baidu.com/"
         },
         {
           "type": "scancode_waitmsg",

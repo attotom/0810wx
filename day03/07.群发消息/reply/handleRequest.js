@@ -6,14 +6,18 @@ const template = require('./template');
 const {token} = require('../config');
 
 module.exports = () => {
-  
+
   return async (req, res, next) => {
     console.log(req.query);
     //获取请求参数
     const {signature, echostr, timestamp, nonce} = req.query;
     // const {token} = config;
     const str = sha1([timestamp, nonce, token].sort().join(''));
-
+    /*
+     微信服务器会发送两种类型的消息给开发者
+     1. GET 验证服务器有效性逻辑
+     2. POST 转发用户消息
+     */
     if (req.method === 'GET') {
       // 验证服务器有效性逻辑
       if (signature === str) {
@@ -44,6 +48,6 @@ module.exports = () => {
     } else {
       res.end('error');
     }
-  
+
   }
 }

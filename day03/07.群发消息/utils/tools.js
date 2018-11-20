@@ -1,3 +1,6 @@
+/*
+ 工具方法
+ */
 const {parseString} = require('xml2js');
 
 module.exports = {
@@ -15,7 +18,7 @@ module.exports = {
           resolve(result);
         })
     })
-    
+
   },
   parseXMLDataAsync (xmlData) {
     return new Promise((resolve, reject) => {
@@ -40,7 +43,7 @@ module.exports = {
       //去掉[]
       result[key] = value[0];
     }
-    
+
     return result;
   }
 }

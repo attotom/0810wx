@@ -1,3 +1,7 @@
+/*
+ 所有的接口定义的模块
+ */
+
 //接口地址公共前缀
 const prefix = 'https://api.weixin.qq.com/cgi-bin/';
 

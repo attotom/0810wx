@@ -1,3 +1,7 @@
+/*
+ 设置最终回复给微信服务器的消息模板
+ */
+
 module.exports = options => {
   //返回xml消息给微信服务器
   let replyMessage = `<xml>
@@ -5,7 +9,7 @@ module.exports = options => {
       <FromUserName><![CDATA[${options.fromUserName}]]></FromUserName>
       <CreateTime>${options.createTime}</CreateTime>
       <MsgType><![CDATA[${options.msgType}]]></MsgType>`;
-  
+
   if (options.msgType === 'text') {
     replyMessage += `<Content><![CDATA[${options.content}]]></Content>`;
   } else if (options.msgType === 'image') {
@@ -37,8 +41,8 @@ module.exports = options => {
       </item>
       </Articles>`;
   }
-  
+
   replyMessage += '</xml>';
-  
+
   return replyMessage;
 }

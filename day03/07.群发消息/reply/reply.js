@@ -1,5 +1,9 @@
+/*
+ 通过判断用户发送的消息类型，设置具体返回的响应内容
+ */
+
 module.exports = message => {
-  
+
   //初始化消息配置对象
   let options = {
     toUserName: message.FromUserName,
@@ -7,10 +11,10 @@ module.exports = message => {
     createTime: Date.now(),
     msgType: 'text'
   }
-  
+
   //初始化一个消息文本
   let content = '你在说什么，我听不懂~';
-  
+
   if (message.MsgType === 'text') {
     if (message.Content === '1') {  //全匹配
       content = '大吉大利，今晚吃鸡';
@@ -51,11 +55,11 @@ module.exports = message => {
       content = `用户点击了：${message.EventKey}`;
     }
   }
-  
+
   //判断用户发送消息的内容，根据内容返回特定的响应
   options.content = content;
-  
-  
+
+
   return options;
-  
+
 }

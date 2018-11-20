@@ -1,3 +1,7 @@
+/*
+ 菜单配置模块
+ */
+
 module.exports =  {
   "button":[
     {
@@ -11,7 +15,7 @@ module.exports =  {
         {
           "type":"view",
           "name":"跳转链接☀",
-          "url":"http://www.atguigu.com/"
+          "url":"http://www.baidu.com/"
         },
         {
           "type": "scancode_waitmsg",
@@ -53,8 +57,17 @@ module.exports =  {
           "type": "location_select",
           "key": "rselfmenu_2_0"
         },
-
+        /*{
+         "type": "media_id",
+         "name": "图片",
+         "media_id": "MEDIA_ID1"
+         },
+         {
+         "type": "view_limited",
+         "name": "图文消息",
+         "media_id": "MEDIA_ID2"
+         }*/
       ]
     }
-    ]
+  ]
 }
